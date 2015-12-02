@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
   <head>
+  <meta charset="UTF-8">
     <title>Socket.IO chat</title>
     <style>
       * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -58,6 +59,12 @@ var items = Array('賽在滾','拉屎王','王八烏龜蛋','食屎王','餔雪�
 				break;
 			case 'beep':
 				$('#messages').append($('<li>').text('[系統]廁所'+data.toiletID+'，有人拿逼逼卡刷門！卡號是'+data.value));
+				break;
+			case 'bathHOT':
+				if(data.value=="true"){ 
+					$('#messages').append($('<li>').text('[系統]廁所'+data.toiletID+'，有人入侵！'));
+				}
+				
 				break;
 			default:
 				
